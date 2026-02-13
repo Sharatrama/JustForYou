@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb);
+  background-size: 400% 400%;
+  animation: bg 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+@keyframes bg {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  width: 90%;
+  max-width: 360px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+button {
+  margin-top: 15px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(255,77,109,0.6);
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  color: #ff4d6d;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(0); opacity: 1;}
+  to {transform: translateY(-120vh); opacity: 0;}
+}

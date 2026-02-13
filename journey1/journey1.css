@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  max-width: 350px;
+}
+
+/* Story Sections */
+.story {
+  padding: 60px 20px;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.story h2 {
+  margin-bottom: 15px;
+}
+
+.story p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Reveal Animation */
+.story.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating hearts */
+#hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  animation: float 6s linear forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .story {
+    padding: 40px 16px;
+  }
+
+  .story p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* Continue Button Section */
+.continue-section {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.continue-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#continueBtn {
+  padding: 14px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff4e8a, #ff9ebc);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 78, 138, 0.4);
+  transition: 0.3s ease;
+}
+
+#continueBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(255, 78, 138, 0.6);
+}
+
+#continueBtn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  #continueBtn {
+    width: 90%;
+  }
+}
+
